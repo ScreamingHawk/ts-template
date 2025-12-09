@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: false
+  jobs:
+    - name: 1_format
+      glob: '*.{ts,tsx,js,jsx,json,css,md}'
+      run: bun run format {staged_files}
+      stage_fixed: true
+    - name: 2_lint
+      glob: '*.{ts,tsx,js,jsx}'
+      run: bun run lint {staged_files}
+    - name: 3_type-check
+      run: bun run type-check
+    - name: 4_build
+      run: bun run build
