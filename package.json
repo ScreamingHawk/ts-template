@@ -12,7 +12,7 @@
     "url": "https://github.com/screaminghawk/ts-template/issues"
   },
   "scripts": {
-    "build": "bun build src/index.ts",
+    "build": "bun build src/index.ts --outdir dist",
     "start": "bun run src/index.ts",
     "test": "bun test",
     "type-check": "tsc --noEmit",
